@@ -1,20 +1,20 @@
 
-var app = angular.module("instantSearch", []);
+var app = angular.module("instantCarSearch", []);
 
 app.filter('searchFor', function(){
-	return function(vrr, searchString){
+	return function(vrr, carString){
 
-		if(!searchString){
+		if(!carString){
 			return vrr;
 		}
 
 		var result = [];
 
-		searchString = searchString.toLowerCase();
+		carString = carString.toLowerCase();
 
 		angular.forEach(vrr, function(item){
 
-			if(item.title.toLowerCase().indexOf(searchString) !== -1){
+			if(item.title.toLowerCase().indexOf(carString) !== -1){
 				result.push(item);
 			}
 
@@ -27,7 +27,7 @@ app.filter('searchFor', function(){
 
 ///////////////////////////////
 
-function InstantSearchController($scope){
+function carSearchController($scope){
 
 	$scope.items = [
 		{

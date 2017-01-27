@@ -3,27 +3,29 @@
 
 	<head>
 		<meta charset="utf-8"/>
-		<title>Learn AngularJS - Instant Search</title>
+		<title>Car Dealership App</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
-		<link href="carD.css" rel="stylesheet" />
 
+		<link href="carD.css" rel="stylesheet" />
+          <h1>Car Dealer</h1>
 	</head>
 
-	<body ng-app="instantSearch" ng-controller="InstantSearchController">
+	<body ng-app="instantCarSearch" ng-controller="carSearchController">
 
 		<div class="bar">
 
-			<input type="text" ng-model="searchString" placeholder="Enter the car you want" />
+			<input type="text" ng-model="carString" placeholder="Enter the car you want" />
 		</div>
+
+		<dropdown placeholder="cars"></dropdown>
 
 		<ul>
 
-			<li ng-repeat="i in items | searchFor:searchString">
+			<li ng-repeat="i in items | searchFor:carString">
 				<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
-				<p>Car: {{i.title}}</p>
+				<p> Car: {{i.title}}</p>
 				<p> Starting at {{i.Price}}</p>
 			</li>
 		</ul>
