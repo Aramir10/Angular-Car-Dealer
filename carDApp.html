@@ -9,7 +9,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 
 		<link href="carD.css" rel="stylesheet" />
-          <h1>Car Dealer</h1>
+          <h1>Car Dealing Palace</h1>
 	</head>
 
 	<body ng-app="instantCarSearch" ng-controller="carSearchController">
@@ -20,17 +20,29 @@
 		</div>
 
 		<dropdown placeholder="cars"></dropdown>
-
+<h1>New Cars</h1>
 		<ul>
 
-			<li ng-repeat="i in items | searchFor:carString">
+			<li ng-repeat="i in cars | searchFor:carString">
 				<a href="{{i.url}}"><img ng-src="{{i.image}}" /></a>
-				<p> Car: {{i.title}}</p>
+				<p> Car: {{i.model}}</p>
 				<p> Starting at {{i.Price}}</p>
 			</li>
 		</ul>
 
+		<h1>Select the Car type</h1>
+
+
+<div ng-app="instantCarSearch" ng-controller="carSearchController">
+		<select ng-model="carString">
+		<option ng-repeat="x in makes | searchFor:id" value="{{x.type}}">{{x.type}}</option>
+
+		</select>
+</div>
+		<h1>The  Car type you selected: {{x.type}}</h1>
+
 
 		<script src="carDealer.js"></script>
+		<script src="carDrop.js"></script>
 	</body>
 </html>
